@@ -1,0 +1,27 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dist": "electron-builder",
+    "postuninstall": "install-app-deps"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^6.1.9",
+    "electron-builder": "^22.4.1"
+  },
+  "dependencies": {
+    "electron-pdf-window": "^1.0.12",
+    "ffi-napi": "^2.4.6",
+    "sqlite3": "^4.1.1",
+    "tiff": "^4.0.0",
+    "tiff.js": "^1.0.0",
+    "upng-js": "^2.1.0",
+    "utif": "^3.1.0"
+  }
+}

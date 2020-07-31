@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+
+    <style></style>
+  </head>
+  <body>
+    <div class="indicator">hello word</div>
+
+    <script>
+      var Tiff = require("tiff.js");
+
+      onload = () => {
+        console.log(__dirname);
+
+        const indicator = document.querySelector(".indicator");
+
+        function imgLoaded(e) {
+          var tiff = new Tiff({ buffer: e.target.response });
+          var canvas = tiff.toCanvas();
+          document.body.append(canvas);
+          // console.log(UPNG.encode(rgba, ifds[0].width, ifds[0].height, 0));
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://127.0.0.1/file/test.TIF");
+        xhr.responseType = "arraybuffer";
+        xhr.onload = imgLoaded;
+        xhr.send();
+      };
+    </script>
+  </body>
+</html>
